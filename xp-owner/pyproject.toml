@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xp-owner-first-slice"
+version = "0.1.0"
+description = "Four independent XPeng owner support service packages"
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xp_owner_service*", "xp_procedure_service*", "xp_ai_service*", "xp_account_service*"]
